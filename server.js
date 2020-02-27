@@ -35,12 +35,10 @@ io.on('connection', (socket) => {
   })
 
   socket.on('requestMessages', (users) => {
-    console.log('pediu mensagens')
     const filteredMessages = messages.filter((message) => {
       return (message.from === users.owner_id && message.to === users.target_id) || (message.from === users.target_id && message.to === users.owner_id)
     })
     console.log(filteredMessages)
-    socket.emit('loadMessages', filteredMessages)
   })
 
   socket.on('disconnect', () => {
