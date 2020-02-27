@@ -1,4 +1,4 @@
 node_modules
 dist/
-front-end
+front-end/node_modules
 config
